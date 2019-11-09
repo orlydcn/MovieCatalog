@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/categoryFragment">
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="io.orly.movies.ui.category.CategoryFragment"
+        android:label="@string/category_catalog"
+        tools:layout="@layout/fragment_category">
+
+        <action
+            android:id="@+id/action_category_fragment_to_movie_catalog_fragment"
+            app:destination="@id/movie_list_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movie_list_fragment"
+        android:name="io.orly.movies.ui.movie_catalog.MovieCatalogFragment"
+        android:label="@string/movie_catalog"
+        tools:layout="@layout/fragment_movie_catalog">
+
+        <argument
+            android:name="categoryId"
+            app:argType="integer"
+            android:defaultValue="-1"/>
+
+        <argument
+            android:name="categoryName"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
+        <action
+            android:id="@+id/action_to_movie_detail"
+            app:destination="@id/movie_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movie_fragment"
+        android:name="io.orly.movies.ui.movie.MovieFragment"
+        android:label="@string/movie_detail"
+        tools:layout="@layout/fragment_movie_detail">
+        <argument
+            android:name="movieId"
+            app:argType="integer"
+            android:defaultValue="-1"/>
+
+        <argument
+            android:name="movieName"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
+
+</navigation>

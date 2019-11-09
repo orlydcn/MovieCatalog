@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="onCardClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="movie"
+            type="io.orly.movies.data.local.entities.MovieEntity" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_marginRight="@dimen/margin_small"
+        android:onClick="@{onCardClick}"
+        app:cardElevation="4dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_category_name"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal"
+            android:gravity="center"
+            android:text="@{movie.title}"
+            tools:text="Sleepless in Seattle" />
+    </com.google.android.material.card.MaterialCardView>
+</layout>

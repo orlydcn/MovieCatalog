@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MovieCatalog</string>
+    <string name="movie_catalog">Peliculas</string>
+    <string name="movie_detail">Detalles</string>
+    <string name="category_catalog">Categorias</string>
+    <string name="movie_title">Titúlo: %1$s</string>
+    <string name="movie_subtitle">Subtitúlo: %1$s</string>
+    <string name="movie_year">Año: %1$d</string>
+    <string name="movie_description">Descripción: \n %1$s</string>
+</resources>
